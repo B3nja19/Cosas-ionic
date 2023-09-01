@@ -1,0 +1,70 @@
+import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-siete',
+  templateUrl: './siete.page.html',
+  styleUrls: ['./siete.page.scss'],
+})
+export class SietePage implements OnInit {
+  nombre = "Juan";
+  apellido = "Perez";
+  n1: number;
+  n2: number;
+  resultado: number;
+  constructor(private toastController:ToastController) 
+  {this.n1=0;
+    this.n2=0;
+    this.resultado=0;
+   }
+  ngOnInit() {
+  }
+  async sumar()
+  {
+    this.resultado = this.n1 + this.n2;
+    const toast = await this.toastController.create({
+      message:'El resultado: ' + this.resultado,
+      duration : 3000,
+      position:'top',
+    });
+    await toast.present();
+
+    console.log('Hello world 😂😊❤❤')
+  }
+  async restar()
+  {
+    this.resultado = this.n1 - this.n2;
+    const toast = await this.toastController.create({
+      message:'El resultado: ' + this.resultado,
+      duration : 3000,
+      position:'top',
+    });
+    await toast.present();
+
+    console.log('Hello world 😂😊❤❤')
+  }
+  async dividir()
+  {
+    this.resultado = this.n1 / this.n2;
+    const toast = await this.toastController.create({
+      message:'El resultado: ' + this.resultado,
+      duration : 3000,
+      position:'top',
+    });
+    await toast.present();
+
+    console.log('Hello world 😂😊❤❤')
+  }
+  async multiplicar()
+  {
+    this.resultado = this.n1 * this.n2;
+    const toast = await this.toastController.create({
+      message:'El resultado: ' + this.resultado,
+      duration : 3000,
+      position:'top',
+    });
+    await toast.present();
+
+    console.log('Hello world 😂😊❤❤')
+  }
+}
